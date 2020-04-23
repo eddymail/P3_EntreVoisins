@@ -2,12 +2,15 @@
 
 ## Informations générales
 Ce dépôt contient une mini-application pour le P3 du parcours **Grande École du Numérique**.
-Cette application a pour vocation de permettre aux personnes d’un même quartier de se rendre des petits services
+Cette application a pour vocation de permettre aux personnes d’un même quartier de se rendre des petits services.
 
 
 ## Démarrage
-Pour ouvrir le projet sous Android Studio
-Menu "VCS" -> "import from version control" -> "git". Renseigner ensuite l'URL du repository.
+Pour ouvrir le projet sous Android Studio.
+* Dans le menu VCS
+  * import from version control 
+  * git 
+  * Renseigner ensuite l'URL du repository.
 
 ## Auteurs
 * Deyine Jiddou
