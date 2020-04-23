@@ -12,15 +12,15 @@ Menu "VCS" -> "import from version control" -> "git". Renseigner ensuite l'URL d
 ## Auteurs
 * Deyine Jiddou
   * Work
-  Chief Technology Officer @ NETICOA Sénégal
+  > Chief Technology Officer @ NETICOA Sénégal
   Lead Software Engineer @ Neticoa
   software engineer @ Sopartech Developpements
   * Education	
-  Diplome d'ingénieur de conception, Ingénierie informatique @ Ecole Superieure Polytechnique de Dakar
+  > Diplome d'ingénieur de conception, Ingénierie informatique @ Ecole Superieure Polytechnique de Dakar
 
 * Edouard Loussouarn
   * Education
-  OpenClassrooms
+  > OpenClassrooms
 	
 
 
