@@ -36,7 +36,7 @@ import static org.hamcrest.Matchers.allOf;
         public void runDisplayNeighbourActivity(){
         // we perform a click on a neighbour at position 0
         onView(allOf(withId(R.id.list_neighbours), isDisplayed())).perform(RecyclerViewActions.actionOnItemAtPosition(0, click()));
-        //  check is activity was started
+        //  check if activity was started
         intended(hasComponent(DisplayNeighbourActivity.class.getName()));
 
     }
