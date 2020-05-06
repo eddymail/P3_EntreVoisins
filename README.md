@@ -24,8 +24,4 @@ Pour ouvrir le projet sous Android Studio.
 * Edouard Loussouarn
   * Education
   > OpenClassrooms
-	
 
-
-
-"# EntreVoisins" 
