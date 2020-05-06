@@ -21,6 +21,10 @@ public class DummyNeighbourApiService implements  NeighbourApiService {
         return neighbours;
     }
 
+    /**
+     *
+     * @return
+     */
     @Override
     public List<Neighbour> getFavoritesNeighbours() {
         List<Neighbour> result = new ArrayList<>();
@@ -30,6 +34,16 @@ public class DummyNeighbourApiService implements  NeighbourApiService {
             }
         }
         return result;
+    }
+
+    @Override
+    public void deleteFavoriteNeighbour(Neighbour neighbour) {
+        neighbour.setFavorite(false);
+    }
+
+    @Override
+    public void addFavoriteNeighbour(Neighbour neighbour) {
+        neighbour.setFavorite(true);
     }
 
     /**

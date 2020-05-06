@@ -9,10 +9,11 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
-import com.bumptech.glide.request.RequestOptions;
 import com.openclassrooms.entrevoisins.R;
 import com.openclassrooms.entrevoisins.di.DI;
 import com.openclassrooms.entrevoisins.model.Neighbour;
+import com.openclassrooms.entrevoisins.service.DummyNeighbourApiService;
+import com.openclassrooms.entrevoisins.service.NeighbourApiService;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -20,10 +21,19 @@ import butterknife.ButterKnife;
 public class DisplayNeighbourActivity extends AppCompatActivity {
 
     private Neighbour neighbour = null;
+    private NeighbourApiService mApiService;
+
 
     public void switchFavoriteStatus() {
-        neighbour.setFavorite(!neighbour.isFavorite());
-        mFavoriteButton.setSelected(neighbour.isFavorite());
+        mApiService = DI.getNeighbourApiService();
+
+        if(!mFavoriteButton.isSelected()) {
+            mApiService.addFavoriteNeighbour(neighbour);
+            mFavoriteButton.setSelected(neighbour.isFavorite());
+        }else{
+            mApiService.deleteFavoriteNeighbour(neighbour);
+            mFavoriteButton.setSelected(neighbour.isFavorite());
+        }
     }
 
     @Override
@@ -54,11 +64,11 @@ public class DisplayNeighbourActivity extends AppCompatActivity {
 
         if(neighbour != null){
             mNeighbourName.setText(neighbour.getName());
+            mTvNeighbourName.setText(neighbour.getName());
             Glide.with(mNeighbourAvatar.getContext())
                     .load(neighbour.getAvatarUrl())
                     .into(mNeighbourAvatar);
             mFavoriteButton.setSelected(neighbour.isFavorite());
-
         }
 
     }
@@ -75,6 +85,7 @@ public class DisplayNeighbourActivity extends AppCompatActivity {
     public CardView mContactInformation;
     @BindView(R.id.cv_about)
     public CardView mAboutText;
-
+    @BindView(R.id.tv_neighbour_name)
+    public TextView mTvNeighbourName;
 
 }

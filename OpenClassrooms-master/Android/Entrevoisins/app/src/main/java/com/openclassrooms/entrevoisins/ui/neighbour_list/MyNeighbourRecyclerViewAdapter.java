@@ -29,8 +29,9 @@ public class MyNeighbourRecyclerViewAdapter extends RecyclerView.Adapter<MyNeigh
     public MyNeighbourRecyclerViewAdapter(List<Neighbour> items) {
         mNeighbours = items;
     }
-    //Appel de onCreateViewHolder
-    //Crée un viewHolder à partir du layout représentant chaque ligne de la RecyclerView
+
+
+    //Create a viewHolder from the layout representing each line of the RecyclerView
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext())
@@ -38,7 +39,7 @@ public class MyNeighbourRecyclerViewAdapter extends RecyclerView.Adapter<MyNeigh
         return new ViewHolder(view);
 
     }
-    //Appel de onBindViewHolder pour chacune des lignes visibles affichées du RecyclerView
+    //Call onBindViewHolder for each visible line displayed from the RecyclerView
     @Override
     public void onBindViewHolder(final ViewHolder holder, int position) {
         Neighbour neighbour = mNeighbours.get(position);
@@ -67,7 +68,7 @@ public class MyNeighbourRecyclerViewAdapter extends RecyclerView.Adapter<MyNeigh
             }
         });
     }
-    //Retourne la taille de la liste d'objet et indique à l'adapter le nbr de lignes que peut contenir la RecyclerView
+    //Returns the total number of items in the data set held by the adapter.
     @Override
     public int getItemCount() {
         return mNeighbours.size();
@@ -75,8 +76,7 @@ public class MyNeighbourRecyclerViewAdapter extends RecyclerView.Adapter<MyNeigh
 
 
 
-    //Création du ViewHolder
-    //Modelise en objet java la vue xml
+    //ViewHolder
     public class ViewHolder extends RecyclerView.ViewHolder {
         @BindView(R.id.item_list_avatar)
         public ImageView mNeighbourAvatar;
@@ -85,7 +85,7 @@ public class MyNeighbourRecyclerViewAdapter extends RecyclerView.Adapter<MyNeigh
         @BindView(R.id.item_list_delete_button)
         public ImageButton mDeleteButton;
 
-
+        //Constructor
         public ViewHolder(View view) {
             super(view);
             ButterKnife.bind(this, view);

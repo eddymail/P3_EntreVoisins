@@ -29,4 +29,19 @@ public interface NeighbourApiService {
      */
     Neighbour getNeighbourById(int id);
 
+    /**
+     * add a neighbour to favorites
+     * @param neighbour
+     * @return
+     */
+    void addFavoriteNeighbour(Neighbour neighbour);
+
+
+    /**
+     * Deletes a favorits neighbour
+     * @param neighbour
+     * @return
+     */
+    void deleteFavoriteNeighbour(Neighbour neighbour);
+
 }

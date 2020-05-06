@@ -16,7 +16,7 @@ public class Neighbour {
     /** Avatar */
     private String avatarUrl;
 
-    /** Favorit */
+    /** Favorite */
     private boolean favorite;
 
     /**
