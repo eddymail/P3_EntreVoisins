@@ -88,7 +88,8 @@ public class NeighboursListTest {
         // we recover the first neighbour of the list
         Neighbour neighbour = DI.getNeighbourApiService().getNeighbours().get(0);
         // we perform a click on a neighbour at position 0
-        onView(allOf(withId(R.id.list_neighbours), isDisplayed())).perform(RecyclerViewActions.actionOnItemAtPosition(0, click()));
+        onView(allOf(withId(R.id.list_neighbours), isDisplayed())).
+                perform(RecyclerViewActions.actionOnItemAtPosition(0, click()));
         // we check that the textView contains the neighbour name
         onView(withId(R.id.tv_name)).check(matches(withText(neighbour.getName())));
     }
@@ -97,7 +98,8 @@ public class NeighboursListTest {
     public void runDisplayNeighbourActivity(){
         Intents.init();
         // we perform a click on a neighbour at position 0
-        onView(Matchers.allOf(withId(R.id.list_neighbours), isDisplayed())).perform(RecyclerViewActions.actionOnItemAtPosition(0, click()));
+        onView(Matchers.allOf(withId(R.id.list_neighbours), isDisplayed()))
+                .perform(RecyclerViewActions.actionOnItemAtPosition(0, click()));
         //  check if activity was started
         intended(hasComponent(DisplayNeighbourActivity.class.getName()));
     }
@@ -108,7 +110,8 @@ public class NeighboursListTest {
         Neighbour favoriteNeighbourToAdd = DI.getNeighbourApiService().getNeighbours().get(0);
         favoriteNeighbourToAdd.setFavorite(false);
         // We perform a click on a neighbour at position 0
-        onView(allOf(withId(R.id.list_neighbours), isDisplayed())).perform(RecyclerViewActions.actionOnItemAtPosition(0, click()));
+        onView(allOf(withId(R.id.list_neighbours), isDisplayed())).
+                perform(RecyclerViewActions.actionOnItemAtPosition(0, click()));
         // We perform a click on the fab favorite
         ViewInteraction floatingActionButton = onView(withId(R.id.fab_favorite));
         floatingActionButton.perform(click());
@@ -119,7 +122,7 @@ public class NeighboursListTest {
         ViewInteraction tabView = onView(withContentDescription("Favorites"));
         tabView.perform(click());
         onView(allOf(withId(R.id.list_neighbours),isDisplayed()))
-                .check(matches(hasMinimumChildCount(1)));
+                .check(matches(hasChildCount(1)));
     }
 
     @Test
@@ -128,7 +131,8 @@ public class NeighboursListTest {
         Neighbour favoriteNeighbourToDelete = DI.getNeighbourApiService().getNeighbours().get(0);
         favoriteNeighbourToDelete.setFavorite(true);
         // We perform a click on a neighbour at position 0
-        onView(allOf(withId(R.id.list_neighbours), isDisplayed())).perform(RecyclerViewActions.actionOnItemAtPosition(0, click()));
+        onView(allOf(withId(R.id.list_neighbours), isDisplayed())).
+                perform(RecyclerViewActions.actionOnItemAtPosition(0, click()));
         // We perform a click on the fab favorite
         ViewInteraction floatingActionButton = onView(withId(R.id.fab_favorite));
         floatingActionButton.perform(click());
@@ -145,7 +149,8 @@ public class NeighboursListTest {
     @Test
     public void DisplayOnlyFavoritesList() {
         // we perform a click on a neighbour at position 0
-        onView(allOf(withId(R.id.list_neighbours), isDisplayed())).perform(RecyclerViewActions.actionOnItemAtPosition(0, click()));
+        onView(allOf(withId(R.id.list_neighbours), isDisplayed())).
+                perform(RecyclerViewActions.actionOnItemAtPosition(0, click()));
         // we perform a click on the fab favorite
         ViewInteraction floatingActionButton = onView(withId(R.id.fab_favorite));
         floatingActionButton.perform(click());
