@@ -102,6 +102,7 @@ public class NeighboursListTest {
                 .perform(RecyclerViewActions.actionOnItemAtPosition(0, click()));
         //  check if activity was started
         intended(hasComponent(DisplayNeighbourActivity.class.getName()));
+        Intents.release();
     }
 
     @Test
@@ -122,7 +123,7 @@ public class NeighboursListTest {
         ViewInteraction tabView = onView(withContentDescription("Favorites"));
         tabView.perform(click());
         onView(allOf(withId(R.id.list_neighbours),isDisplayed()))
-                .check(matches(hasChildCount(1)));
+                .check(matches(hasChildCount(+1)));
     }
 
     @Test
