@@ -1,25 +1,25 @@
 # Entrevoisins
 
-## Informations générales
-Ce dépôt contient une mini-application pour le P3 du parcours **Grande École du Numérique**.
-Cette application a pour vocation de permettre aux personnes d’un même quartier de se rendre des petits services.
+## General informations
+This repository contains a mini-application for the P3 project of the **Grande École du Numérique** course.
+This application aims to allow people in the same neighborhood to provide small services.
 
 
-## Démarrage
-Pour ouvrir le projet sous Android Studio.
-* Dans le menu VCS
-  * import from version control 
-  * git 
-  * Renseigner ensuite l'URL du repository.
-
-## Auteurs
+## Startup
+To open the project in Android Studio.
+* In the VCS menu
+  * import from version control
+  * git
+  * Then enter the URL of the repository.
+  
+## Authors
 * Deyine Jiddou
   * Work
   > Chief Technology Officer @ NETICOA Sénégal
   Lead Software Engineer @ Neticoa
   software engineer @ Sopartech Developpements
   * Education	
-  > Diplome d'ingénieur de conception, Ingénierie informatique @ Ecole Superieure Polytechnique de Dakar
+  > Design engineer diploma, Ingénierie informatique @ Ecole Superieure Polytechnique de Dakar
 
 * Edouard Loussouarn
   * Education
